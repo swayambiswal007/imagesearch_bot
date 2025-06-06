@@ -3,7 +3,7 @@ from telegram.ext import ApplicationBuilder, InlineQueryHandler, ContextTypes
 from duckduckgo_search import DDGS
 import os
 
-# If you want to run locally with a .env file, uncomment these lines:
+# For local development (.env support)
 from dotenv import load_dotenv
 load_dotenv()
 
@@ -27,7 +27,7 @@ async def inline_query(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 InlineQueryResultPhoto(
                     id=str(i),
                     photo_url=r['image'],
-                    thumb_url=r.get('thumbnail', r['image']),
+                    thumbnail_url=r.get('thumbnail', r['image']),  # ✅ FIXED HERE
                 )
             )
 
