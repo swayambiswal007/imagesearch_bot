@@ -8,8 +8,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 BOT_TOKEN = os.getenv("BOT_TOKEN")
-WEBHOOK_URL = f"https://{os.getenv('REPL_SLUG')}.{os.getenv('REPL_OWNER')}.repl.co"
-
+WEBHOOK_URL = f"https://imagesearchbot.swayambiswal00.repl.co"
 if not BOT_TOKEN:
     raise ValueError("BOT_TOKEN is not set")
 
